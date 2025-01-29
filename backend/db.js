@@ -32,6 +32,11 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         trim: true
+    },
+    isAdmin: {
+        type: String,
+        required: true,
+        default: false
     }
 });
 
@@ -52,6 +57,11 @@ const taskSchema = new mongoose.Schema({
     deadline: {
         type: Date,
         default: Date.now
+    },
+    priority: {
+        type: String,
+        default: "normal",
+        enum: ["high", "medium", "normal", "low"]
     }
 })
 

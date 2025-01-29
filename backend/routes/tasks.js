@@ -24,7 +24,8 @@ router.post("/create", async (req, res) => {
         title: body.title,
         description: body.description,
         completed: false,
-        deadline: new Date() + 7 
+        deadline: body.date,
+        priority: body.priority
     })
 
     res.json({
