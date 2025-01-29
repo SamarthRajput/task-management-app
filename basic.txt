@@ -1,0 +1,4 @@
+A comment section on a website does not necessarily require a WebSocket for basic functionality where users submit comments 
+and see them displayed after refreshing the page. 
+however, if you want to achieve real-time updates where new comments appear instantly without refreshing, 
+then a WebSocket connection is needed to enable that live, two-way communication between the server and clients. 
