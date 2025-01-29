@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Schema } = require("zod");
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(() => console.log("connected to database"))
@@ -37,7 +38,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: false
-    }
+    },
+    tasks: [{
+        type: Schema.Types.ObjectId,
+        ref: "Task"
+    }]
 });
 
 
@@ -56,12 +61,16 @@ const taskSchema = new mongoose.Schema({
     },
     deadline: {
         type: Date,
-        default: Date.now
+        default: new Date()
     },
     priority: {
         type: String,
         default: "normal",
         enum: ["high", "medium", "normal", "low"]
+    },
+    by: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }
 })
 
