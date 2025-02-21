@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { Button2 } from "./ui/Button"
 
 export const Navbar = () => {
     return <div className="flex justify-between px-10 py-4 bg-transparent">
@@ -17,9 +18,7 @@ export const Navbar = () => {
         <Link to={'/signin'}>
             <button className="text-md mr-5 text-slate-300 text-center">Sign in</button>
         </Link>
-        <Link to={'/signup'}>
-            <button className="text-sm rounded-full bg-green-500 text-white font-medium px-5 py-2 text-center me-2 mb-2">Get started </button>
-        </Link>
+        <Button2 label={"Signup"} to={"/signup"}/>
     </div>
 </div>
 }
